@@ -27,5 +27,5 @@ std::shared_ptr<vovanex::Response> vovanex::View::options() const {
 }
 
 std::shared_ptr<vovanex::Response> vovanex::View::method_not_allowed() const {
-    return std::make_shared<TextResponse>("<h1>Method Not Allowed!</h1>");
+    return METHOD_NOT_ALLOWED_RESPONSE;
 }

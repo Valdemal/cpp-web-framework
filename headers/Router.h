@@ -13,16 +13,13 @@ namespace vovanex {
 
     class Router {
     public:
-        Router(std::initializer_list<route_t> routes) {
-            for (auto &route: routes)
-                this->routes[supplement_url(route.first)] = route.second;
-        }
+        Router(std::initializer_list<route_t> routes);
 
         std::shared_ptr<Response> get_response(const Request& request);
     private:
         std::map<std::string, std::shared_ptr<View>> routes;
 
-        std::string supplement_url(const std::string& url);
+        static std::string supplement_url(const std::string& url);
     };
 }
 

@@ -8,7 +8,7 @@ vovanex::Server::Server(const std::string &host, const std::string &port, const 
                         size_t client_buffer_size)
         : router(router), client_buffer_size(client_buffer_size) {
 
-    std::cout << "Initializing WSA" << std::endl;
+    std::cout << "Start server" << std::endl;
     this->check_WSA();
 
     addrinfo hints{AI_PASSIVE, AF_INET, SOCK_STREAM, IPPROTO_TCP};
@@ -49,7 +49,7 @@ int vovanex::Server::run() {
     auto client_buf = new char[client_buffer_size];
     auto client_socket = INVALID_SOCKET;
 
-    std::cout << std::endl << "Listening to new clients..." << std::endl;
+    std::cout << std::endl << "Listening to connections..." << std::endl;
 
     while (true) {
         client_socket = accept(listen_socket, nullptr, nullptr);

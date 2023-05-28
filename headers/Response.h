@@ -2,14 +2,14 @@
 #define CN8_RESPONSE_H
 
 #include <sstream>
+#include <memory>
 #include "http_status.h"
 
 namespace vovanex {
+
     class Response {
     public:
         virtual std::stringstream render () = 0;
-
-        virtual size_t get_status() const;
 
     protected:
         size_t status;
@@ -50,6 +50,13 @@ namespace vovanex {
     private:
         std::string template_filename;
     };
+
+    extern const std::shared_ptr<Response> NOT_FOUND_RESPONSE;
+
+    extern const std::shared_ptr<Response> METHOD_NOT_ALLOWED_RESPONSE;
+
+    extern const std::shared_ptr<Response> METHOD_NOT_IMPLEMENTED_RESPONSE;
+
 }
 
 
