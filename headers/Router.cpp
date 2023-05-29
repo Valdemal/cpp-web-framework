@@ -19,6 +19,8 @@ std::shared_ptr<vovanex::Response> vovanex::Router::get_response(const vovanex::
             return view->patch();
         case method_t::DEL:
             return view->del();
+        case method_t::HEAD:
+            return view->head();
         case method_t::OPTIONS:
             return view->options();
         default:

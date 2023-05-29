@@ -12,6 +12,7 @@ namespace vovanex {
         virtual std::shared_ptr<Response> put() const;
         virtual std::shared_ptr<Response> patch() const;
         virtual std::shared_ptr<Response> del() const;
+        virtual std::shared_ptr<Response> head() const;
         virtual std::shared_ptr<Response> options() const;
         virtual std::shared_ptr<Response> method_not_allowed() const;
     };
